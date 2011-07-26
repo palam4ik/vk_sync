@@ -1,0 +1,2 @@
+module VkApi
+end
