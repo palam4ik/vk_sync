@@ -1,17 +1,18 @@
 class User
   include DataMapper::Resource
-
-  property :user_id,      Integer
+  property :id,           Serial
+  property :user_id,      Integer, :required => true
   property :access_token, Text
   property :expires_in,   Integer
   property :primary,      Boolean, :default => false
 
-  class << self
-    def count
-      User.all.size
-    end
-  end
-
   has n, :albums
   has n, :audios
+
+  class << self
+    def create_from_auth_hash hash
+      user_hash = hash.merge! primary: true
+      User.create user_hash
+    end
+  end
 end

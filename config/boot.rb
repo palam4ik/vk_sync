@@ -20,4 +20,5 @@ Initializer.load do
   lib_classes
   config_initializers
   application_classes
+  finalizing_models
 end

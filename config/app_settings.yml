@@ -1,0 +1,18 @@
+development:
+  adapter: postgres
+  host: localhost
+  username: postgres
+  password:
+  database: vk_sync_development
+test:
+  adapter: postgres
+  host: localhost
+  username: postgres
+  password:
+  database: vk_sync_test
+production:
+  adapter: postgres
+  host: localhost
+  username: postgres
+  password:
+  database: vk_sync

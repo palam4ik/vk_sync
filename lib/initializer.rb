@@ -6,6 +6,12 @@ module Initializer
       end
     end
 
+    def finalizing_models
+      DataMapper.finalize
+      DataMapper.auto_migrate!
+      DataMapper.auto_upgrade!
+    end
+
     def lib_classes
       Dir.glob("#{APP_ROOT}/lib/*.rb").sort.each do |file|
         require file
@@ -20,11 +26,10 @@ module Initializer
 
     def gems
       require 'data_mapper'
-      require 'dm-yaml-adapter'
+      require 'dm-migrations'
       require 'json'
-    end
-
-    def rake_tasks
+      require 'yaml'
+      require 'ostruct'
     end
 
     def logger

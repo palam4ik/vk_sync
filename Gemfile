@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'data_mapper'
-gem 'dm-yaml-adapter'
+gem 'dm-postgres-adapter'
 
 group :test, :development do
   gem 'rspec'

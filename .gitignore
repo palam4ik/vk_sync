@@ -1,4 +1,5 @@
 /vendor/bundle
+db/*.yml
 
 # Temporary files of every sort
 .DS_Store

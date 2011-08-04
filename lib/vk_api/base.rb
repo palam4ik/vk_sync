@@ -24,7 +24,7 @@ module VkApi
     end
 
     def hash_to_params options
-      options.keys.map{|key| "#{key.to_s}=#{options[key].to_s}"}.join '&'
+      options.keys.map{|key| "#{key.to_s}=#{options[key].to_s}"} * '&'
     end
   end
 end

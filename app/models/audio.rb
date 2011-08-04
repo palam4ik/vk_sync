@@ -1,7 +1,7 @@
 class Audio
   include DataMapper::Resource
 
-  property :id, Integer
+  property :id, Serial
   property :user_id, Integer
   property :album_id, Integer
   property :artist, String
