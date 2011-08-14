@@ -8,7 +8,10 @@ module Initializer
 
     def finalizing_models
       DataMapper.finalize
-      DataMapper.auto_migrate!
+      unless File.exists?(APP_ROOT + "/.db_created")
+        DataMapper.auto_migrate!
+        File.open(APP_ROOT + "/.db_created", 'w')
+      end
       DataMapper.auto_upgrade!
     end
 
@@ -25,11 +28,15 @@ module Initializer
     end
 
     def gems
+      require 'fileutils'
+      require 'net/http'
+
       require 'data_mapper'
       require 'dm-migrations'
       require 'json'
       require 'yaml'
       require 'ostruct'
+      require 'vk'
     end
 
     def logger

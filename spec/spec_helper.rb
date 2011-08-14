@@ -10,8 +10,6 @@ RSpec.configure do |config|
   config.mock_with :rspec
 
   config.before :each do
-    User.repository.adapter.execute "DELETE FROM users CASCADE"
-    Audio.repository.adapter.execute "DELETE FROM audios CASCADE"
-    Album.repository.adapter.execute "DELETE FROM albums CASCADE"
+    DataMapper.auto_migrate!
   end
 end

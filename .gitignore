@@ -1,6 +1,9 @@
 /vendor/bundle
 db/*.yml
 
+.db_created
+Gemfile.lock
+
 # Temporary files of every sort
 .DS_Store
 .idea

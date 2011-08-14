@@ -1,16 +1,23 @@
 development:
+  folders:
+    audio: "/Users/houdini/Music"
+    video: "/Users/houdini/Video"
   adapter: postgres
   host: localhost
   username: postgres
   password:
   database: vk_sync_development
 test:
+  folders:
+    audio: "/tmp/Music"
   adapter: postgres
   host: localhost
   username: postgres
   password:
   database: vk_sync_test
 production:
+  folders:
+    audio: "/Users/houdini/Music"
   adapter: postgres
   host: localhost
   username: postgres
