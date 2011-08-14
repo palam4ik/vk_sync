@@ -12,7 +12,7 @@ class User
 
   class << self
     def create_from_auth_hash hash
-      hash['id'] = hash.delete('user_id')
+      hash['id'] = hash.delete('user_id') if hash.has_key? 'user_id'
       User.create hash.merge(primary: true)
     end
   end
