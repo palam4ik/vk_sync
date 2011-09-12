@@ -67,5 +67,10 @@ describe Audio do
       audio = Audio.new title: " / Some title", url: "http://vk.com/123.mp3"
       audio.file_name.should eql("Some title.mp3")
     end
+
+    it "should delete strange symbols" do
+      audio = Audio.new title: "♫ ♫..title", url: "http://vk.com/123.mp3"
+      audio.file_name.should eql('title.mp3')
+    end
   end
 end
